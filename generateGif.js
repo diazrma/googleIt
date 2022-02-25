@@ -61,7 +61,9 @@ async function generateGif(text) {
 
   await page.setViewport({ width: 500, height: 600 });
   await page.goto("https://google.com");
+  await page.focus("[name=q]");
   await page.click("[name=q]");
+  
 
   let contentText = Array.from(text);
   let contentLenght = contentText.length;
