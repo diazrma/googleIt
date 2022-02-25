@@ -3,7 +3,7 @@ const app = express();
 const path = require("path");
 const mime = require("mime");
 const fs = require("fs");
-const port = 3000;
+const port = process.env.PORT||'8080';
 const generateGif = require("./generateGif");
 
 app.use(express.json());
