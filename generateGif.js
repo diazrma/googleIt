@@ -8,6 +8,7 @@ async function generateGif(text) {
   const workDir = "./temp/";
   let file = require("fs").createWriteStream("./public/output/googleit.gif");
   const browser = await puppeteer.launch({
+    ignoreDefaultArgs: ["--enable-automation"],
     headless: true,
     args: ["--no-sandbox", "--disable-setuid-sandbox"],
   });
@@ -63,7 +64,6 @@ async function generateGif(text) {
   await page.goto("https://google.com");
   await page.focus("[name=q]");
   await page.click("input");
-
 
   let contentText = Array.from(text);
   let contentLenght = contentText.length;
