@@ -8,7 +8,7 @@
     const getPixels = require("get-pixels");
     const workDir = "./temp/";
     let file = require("fs").createWriteStream("./public/output/googleit.gif");
-    const browser = await puppeteer.launch({ headless: true });
+    const browser = await puppeteer.launch({ headless: false });
     const page = await browser.newPage();
   
     if (!fs.existsSync(workDir)) {
